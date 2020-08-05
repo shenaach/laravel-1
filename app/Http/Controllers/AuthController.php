@@ -11,14 +11,14 @@ class AuthController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function form()
     {
-        return view('auth.index');
+        return view('form');
     }
 
 
     //Parameten Request . Objeknya $request untuk dapetin datanya
-    public function welcome(Request $request)
+    public function selamatdatang(Request $request)
     {
         //dd($request->all());
 
@@ -27,7 +27,7 @@ class AuthController extends Controller
         $nama_lengkap = "$firstname $lastname";
     
         //compact menerima variabel dikirim berupa string
-        return view('auth.welcome', compact('nama_lengkap'));
+        return view('selamatdatang', compact('nama_lengkap'));
     }
 
 //form    

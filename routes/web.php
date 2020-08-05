@@ -21,5 +21,18 @@ Route::get('/', function () {
 
 route::get('/', 'HomeController@index');
 //form
-route::get('/register', 'AuthController@index');
-route::post('/welcome', 'AuthController@welcome');
+route::get('/register', 'AuthController@form');
+route::post('/selamatdatang', 'AuthController@selamatdatang');
+
+route::get('/master', function(){
+    return view ('adminlte.master');
+});
+route::get('/items', function(){
+    return view('items.index');
+});
+route::get('/', function(){
+    return view('items.page');
+});
+route::get('/data-table', function(){
+    return view('items.data-table');
+});
