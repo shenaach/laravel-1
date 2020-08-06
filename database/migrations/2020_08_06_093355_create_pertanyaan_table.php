@@ -24,8 +24,8 @@ class CreatePertanyaanTable extends Migration
             $table->integer('profil_id');
 
             $table->unsignedBigInteger('pertanyaan_profil1_id');
-            $table->foreign('pertanyaan_profil1_id')->references('id')->on('profils');
-            $table->timestamps();
+            $table->foreign('pertanyaan_profil1_id')->references('id')->on('profil');
+            $table->timestamp('tanggal_diperbaharui')->nullable();
         });
     }
 

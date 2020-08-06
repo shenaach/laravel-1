@@ -24,8 +24,8 @@ class CreateKomentarJawabanTable extends Migration
             $table->foreign('komentar_jawaban1_id')->references('id')->on('jawaban');
 
             $table->unsignedBigInteger('komentar_jawaban_profil1_id');
-            $table->foreign('komentar_jawaban_profil1_id')->references('id')->on('profils');
-            $table->timestamps();
+            $table->foreign('komentar_jawaban_profil1_id')->references('id')->on('profil');
+            $table->timestamp('tanggal_dibuat')->nullable();
         });
     }
 

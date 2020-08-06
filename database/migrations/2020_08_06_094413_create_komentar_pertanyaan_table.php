@@ -20,12 +20,12 @@ class CreateKomentarPertanyaanTable extends Migration
             $table->integer('pertanyaan_id');
             $table->integer('profil_id');
             
-            $table->unsignedBigInteger('komentar_pertanyaan1_id');
-            $table->foreign('komentar_pertanyaan1_id')->references('id')->on('pertanyaan');
+            $table->unsignedBigInteger('komentar_pertanyaan_id');
+            $table->foreign('komentar_pertanyaan_id')->references('id')->on('pertanyaan');
 
             $table->unsignedBigInteger('komentar_pertanyaan_profil1_id');
-            $table->foreign('komentar_pertanyaan_profil1_id')->references('id')->on('profils');
-            $table->timestamps();
+            $table->foreign('komentar_pertanyaan_profil1_id')->references('id')->on('profil');
+            $table->timestamp('tanggal_diperbaharui')->nullable();
         });
     }
 

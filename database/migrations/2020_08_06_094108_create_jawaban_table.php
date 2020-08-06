@@ -24,8 +24,8 @@ class CreateJawabanTable extends Migration
             $table->foreign('jawaban_pertanyaan_id')->references('id')->on('pertanyaan');
             
             $table->unsignedBigInteger('jawaban_profil1_id');
-            $table->foreign('jawaban_profil1_id')->references('id')->on('profils');
-            $table->timestamps();
+            $table->foreign('jawaban_profil1_id')->references('id')->on('profil');
+            $table->timestamp('tanggal_diperbaharui')->nullable();
         });
     }
 
