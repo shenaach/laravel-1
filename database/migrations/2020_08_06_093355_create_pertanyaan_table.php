@@ -17,11 +17,6 @@ class CreatePertanyaanTable extends Migration
             $table->bigIncrements('id');
             $table->string('judul',45);
             $table->string('isi',225);
-            $table->date('tanggal_dibuat');
-            $table->date('tanggal_diperbaharui');
-            //foreign
-            $table->integer('jawaban_tepat_id');
-            $table->integer('profil_id');
 
             $table->unsignedBigInteger('pertanyaan_profil1_id');
             $table->foreign('pertanyaan_profil1_id')->references('id')->on('profil');
