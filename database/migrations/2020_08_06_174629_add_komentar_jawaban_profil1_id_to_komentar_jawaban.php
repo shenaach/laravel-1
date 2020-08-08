@@ -14,8 +14,8 @@ class AddKomentarJawabanProfil1IdToKomentarJawaban extends Migration
     public function up()
     {
         Schema::table('komentar_jawaban', function (Blueprint $table) {
-            $table->unsignedBigInteger('komentar_jawaban_profil1_id');
-            $table->foreign('komentar_jawaban_profil1_id')->references('id')->on('profil');
+            $table->unsignedBigInteger('komentar_jawaban_profil_id')->nullable();
+            $table->foreign('komentar_jawaban_profil_id')->references('id')->on('profil');
         });
     }
 
@@ -27,8 +27,8 @@ class AddKomentarJawabanProfil1IdToKomentarJawaban extends Migration
     public function down()
     {
         Schema::table('komentar_jawaban', function (Blueprint $table) {
-            $table->dropForeign(['komentar_jawaban_profil1_id']);
-            $table->dropColumn(['komentar_jawaban_profil1_id']);
+            $table->dropForeign(['komentar_jawaban_profil_id']);
+            $table->dropColumn(['komentar_jawaban_profil_id']);
         });
     }
 }

@@ -14,8 +14,8 @@ class AddJawabanProfil1IdToJawaban extends Migration
     public function up()
     {
         Schema::table('jawaban', function (Blueprint $table) {
-            $table->unsignedBigInteger('jawaban_profil1_id');
-            $table->foreign('jawaban_profil1_id')->references('id')->on('profil');
+            $table->unsignedBigInteger('jawaban_profil_id')->nullable();
+            $table->foreign('jawaban_profil_id')->references('id')->on('profil');
         });
     }
 
@@ -27,8 +27,8 @@ class AddJawabanProfil1IdToJawaban extends Migration
     public function down()
     {
         Schema::table('jawaban', function (Blueprint $table) {
-            $table->dropForeign(['jawaban_profil1_id']);
-            $table->dropColumn(['jawaban_profil1_id']);
+            $table->dropForeign(['jawaban_profil_id']);
+            $table->dropColumn(['jawaban_profil_id']);
         });
     }
 }

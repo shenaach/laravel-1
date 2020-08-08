@@ -18,11 +18,6 @@ class CreateJawabanTable extends Migration
             $table->string('isi',255);
             $table->integer('pertanyaan_id');
             $table->integer('profil_id');
-            $table->unsignedBigInteger('jawaban_pertanyaan_id');
-            $table->foreign('jawaban_pertanyaan_id')->references('id')->on('pertanyaan');
-            
-            $table->unsignedBigInteger('jawaban_profil1_id');
-            $table->foreign('jawaban_profil1_id')->references('id')->on('profil');
             $table->timestamp('tanggal_diperbaharui')->nullable();
         });
     }

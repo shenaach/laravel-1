@@ -13,26 +13,39 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Controller;
-/*
-Route::get('/', function () {
-    return view('welcome');
-});
-*/
 
-route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index');
 //form
-route::get('/register', 'AuthController@form');
-route::post('/selamatdatang', 'AuthController@selamatdatang');
+Route::get('/register', 'AuthController@form');
+Route::post('/selamatdatang', 'AuthController@selamatdatang');
 
-route::get('/master', function(){
+Route::get('/master', function(){
     return view ('adminlte.master');
 });
-route::get('/items', function(){
+Route::get('/items', function(){
     return view('items.index');
 });
-route::get('/', function(){
+Route::get('/', function(){
     return view('items.page');
 });
-route::get('/data-table', function(){
+Route::get('/data-table', function(){
     return view('items.data-table');
 });
+
+Route::get('/', function(){
+    return view('welcome');
+});
+
+Route::get('/pertanyaan/create' , 'PertanyaanController@create');
+
+Route::post('/pertanyaan', 'PertanyaanController@store');
+
+Route::get('/pertanyaan', 'PertanyaanController@index');
+
+Route::get('/pertanyaan/{pertanyaan_id}', 'PertanyaanController@show');
+
+Route::get('/pertanyaan/{pertanyaan_id}/edit', 'PertanyaanController@edit');
+
+Route::put('/pertanyaan/{pertanyaan_id}', 'PertanyaanController@update');
+
+Route::delete('/pertanyaan/{pertanyaan_id}', 'PertanyaanController@destroy');

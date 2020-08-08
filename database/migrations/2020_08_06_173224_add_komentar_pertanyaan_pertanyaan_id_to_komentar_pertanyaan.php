@@ -14,7 +14,7 @@ class AddKomentarPertanyaanPertanyaanIdToKomentarPertanyaan extends Migration
     public function up()
     {
         Schema::table('komentar_pertanyaan', function (Blueprint $table) {
-            $table->unsignedBigInteger('komentar_pertanyaan_id');
+            $table->unsignedBigInteger('komentar_pertanyaan_id')->nullable();
             $table->foreign('komentar_pertanyaan_id')->references('id')->on('pertanyaan');
         });
     }
