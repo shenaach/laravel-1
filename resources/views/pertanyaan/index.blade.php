@@ -23,18 +23,18 @@
                     </tr>
                   </thead>
                   <tbody>
-                      @forelse($pertanyaan as $key => $tanya)
+                      @forelse($pertanyaan as $key => $pertanyaan)
                         <tr>
                             <td> {{ $key + 1 }} </td>
-                            <td> {{ $tanya->judul }} </td>
-                            <td> {{ $tanya->isi }} </td>
+                            <td> {{ $pertanyaan->judul }} </td>
+                            <td> {{ $pertanyaan->isi }} </td>
                             <td style="display:flex;">
-                                <a href="/pertanyaan/{{$tanya->id}}" class="btn btn-info btn-sm">Show</a>
-                                <a href="/pertanyaan/edit{{$tanya->id}}" class="btn btn-default btn-sm">Edit</a>
-                                <form action="/pertanyaan/{{$tanya->id}}" method="POST" style="width: 33.33%;">
+                                <a href="/pertanyaan/{{$pertanyaan->id}}" class="btn btn-info btn-sm">Show</a>
+                                <a href="/pertanyaan/{{$pertanyaan->id}}/edit" class="btn btn-default btn-sm">Edit</a>
+                                <form action="/pertanyaan/{{$pertanyaan->id}}" method="POST" style="width: 33.33%;">
                                     @csrf
                                     @method("DELETE")
-                                    <input type="submit" value="delete" class="btn btn-danger btn-sm" style="width: 100%; margin-right: 10px">
+                                    <input type="submit" value="Delete" class="btn btn-danger btn-sm" style="width: 100%; margin-right: 10px">
                                 </form>
                             </td> 
                         </tr>

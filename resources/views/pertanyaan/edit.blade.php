@@ -3,16 +3,16 @@
 <div class="ml-3 mt-3"> 
 <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Edit Pertanyaan {{$tanya->id}}</h3>
+                <h3 class="card-title">Edit Pertanyaan {{$pertanyaan->id}}</h3>
               </div>
-              <form role="form" action="/pertanyaan/{{$tanya->id}}" method="POST">
+              <form role="form" action="/pertanyaan/{{$pertanyaan->id}}" method="POST">
               @csrf
               @method ('PUT')
                 <div class="card-body">
                   <div class="form-group">
                     <label for="judul">Judul Pertanyaan</label>
-                     <input type="text" class="form-control" id="judulpertanyaan" name="judulpertanyaan" value="{{ old('judulpertanyaan', $tanya->judulpertanyaan) }}" placeholder="Enter Judul" required>
-                    @error('judulpertanyaan')
+                     <input type="text" class="form-control" id="judul" name="judul" value="{{ old('judul', $pertanyaan->judul) }}" placeholder="Enter Judul" required>
+                    @error('judul')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror 
                     <!-- <input type="text" class="form-control" id="judulpertanyaan" name="judulpertanyaan" placeholder="Enter Judul"> -->
@@ -20,8 +20,8 @@
                 </div>
                   <div class="form-group">
                     <label for="isi">Isi</label>
-                    <input type="text" class="form-control" id="isipertanyaan" name="isipertanyaan" value="{{ old('isipertanyaan', $tanya->isipertanyaan) }}" placeholder="Enter Isi" required>
-                    @error('isipertanyaan')
+                    <input type="text" class="form-control" id="isi" name="isi" value="{{ old('isi', $pertanyaan->isi) }}" placeholder="Enter Isi" required>
+                    @error('isi')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <!--<input type="text" class="form-control" id="isipertanyaan" name="isipertanyaan"  placeholder="Enter Isi">-->

@@ -10,8 +10,8 @@
                 <div class="card-body">
                   <div class="form-group">
                     <label for="judul">Judul Pertanyaan</label>
-                     <input type="text" class="form-control" id="judulpertanyaan" name="judulpertanyaan" value="{{ old('judulpertanyaan', '') }}" placeholder="Enter Judul" required>
-                    @error('judulpertanyaan')
+                     <input type="text" class="form-control" id="judul" name="judul" value="{{ old('judul', '') }}" placeholder="Enter Judul" required>
+                    @error('judul')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror 
                     <!-- <input type="text" class="form-control" id="judulpertanyaan" name="judulpertanyaan" placeholder="Enter Judul"> -->
@@ -19,8 +19,8 @@
                 </div>
                   <div class="form-group">
                     <label for="isi">Isi</label>
-                    <input type="text" class="form-control" id="isipertanyaan" name="isipertanyaan" value="{{ old('isipertanyaan', '') }}" placeholder="Enter Isi" required>
-                    @error('isipertanyaan')
+                    <input type="text" class="form-control" id="isi" name="isi" value="{{ old('isi', '') }}" placeholder="Enter Isi" required>
+                    @error('isi')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <!--<input type="text" class="form-control" id="isipertanyaan" name="isipertanyaan"  placeholder="Enter Isi">-->
